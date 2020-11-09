@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 public class RequestedGameInfo extends AppCompatActivity {
     ImageView gmImage;
     TextView gmTitle, gmDescription, gmPlatform, gmDeveloper, gmPrice;
@@ -20,6 +22,7 @@ public class RequestedGameInfo extends AppCompatActivity {
         gmPlatform = (TextView)findViewById(R.id.ivPlatform);
         gmDeveloper = (TextView)findViewById(R.id.ivDeveloper);
         gmPrice = (TextView)findViewById(R.id.ivPrice);
+        gmImage = (ImageView)findViewById(R.id.ivImage);
 
         Bundle gBundle = getIntent().getExtras();
 
@@ -29,6 +32,9 @@ public class RequestedGameInfo extends AppCompatActivity {
             gmPlatform.setText(gBundle.getString("Platform"));
             gmDeveloper.setText(gBundle.getString("Developer"));
             gmPrice.setText(gBundle.getString("Price"));
+            gmImage.setImageResource(gBundle.getInt("Image"));
+
+            Glide.with(this).load(gBundle.getString("Image")).into(gmImage);
         }
 
     }
