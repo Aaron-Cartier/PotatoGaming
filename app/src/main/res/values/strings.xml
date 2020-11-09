@@ -6,4 +6,10 @@
     <string name="ViewAll">View All</string>
     <string name="Add">Add</string>
     <string name="CustomerPage">CustomerPage</string>
+    <string name="description">Description</string>
+    <string name="game_title">Game Title</string>
+    <string name="price">Price</string>
+    <string name="platform">Platform</string>
+    <string name="developer">Developer</string>
+    <string name="todo">TODO</string>
 </resources>

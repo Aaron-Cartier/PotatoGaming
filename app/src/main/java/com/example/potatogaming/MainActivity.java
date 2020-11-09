@@ -22,6 +22,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, localDatabase.class));
             }
         });
+        Button showGameRequestListPage = findViewById(R.id.btnGameRequestListPage);
+        Log.d(TAG, "Opening Game Request Page...");
+        showGameRequestListPage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, gameRequestListActivity.class));
+            }
+        });
     }
 
     public void btnGameRequestPage(View view) {
