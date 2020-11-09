@@ -23,4 +23,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void btnGameRequestPage(View view) {
+        startActivity(new Intent(this, requestActivity.class));
+    }
 }

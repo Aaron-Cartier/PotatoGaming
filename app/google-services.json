@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "141747296169",
+    "firebase_url": "https://potatogaming-109f9.firebaseio.com",
+    "project_id": "potatogaming-109f9",
+    "storage_bucket": "potatogaming-109f9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141747296169:android:19d8b74e39cc04c5d516b8",
+        "android_client_info": {
+          "package_name": "com.example.potatogaming"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "141747296169-uakqmm4ice71sc82lqaccgsbrunk6jok.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDGDTmakKQ5gJzlwLZ3S0vUkwPvGkYAYcc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141747296169-uakqmm4ice71sc82lqaccgsbrunk6jok.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
