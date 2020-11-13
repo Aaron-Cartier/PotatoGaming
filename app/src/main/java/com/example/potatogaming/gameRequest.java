@@ -7,6 +7,7 @@ public class gameRequest {
     private String gmDeveloper;
     private String gmPrice;
     private String gmImage;
+    private String key;
 
     public gameRequest(){}
 
@@ -41,5 +42,13 @@ public class gameRequest {
 
     public String getGmImage() {
         return gmImage;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

@@ -53,8 +53,9 @@ public class gameRequestListActivity extends AppCompatActivity {
                 myGameRequestList.clear();
 
                 for(DataSnapshot itemSnapshot: dataSnapshot.getChildren()) {
-                    gameRequest gameRequest = itemSnapshot.getValue(gameRequest.class);
-                    myGameRequestList.add(gameRequest);
+                    gameRequest gmRequest = itemSnapshot.getValue(gameRequest.class);
+                    gmRequest.setKey(itemSnapshot.getKey());
+                    myGameRequestList.add(gmRequest);
                 }
                 rAdapter.notifyDataSetChanged();
                 progressDialog.dismiss();

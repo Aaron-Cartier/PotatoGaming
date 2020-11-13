@@ -2,15 +2,25 @@ package com.example.potatogaming;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 public class RequestedGameInfo extends AppCompatActivity {
     ImageView gmImage;
     TextView gmTitle, gmDescription, gmPlatform, gmDeveloper, gmPrice;
+    String key = "";
+    String imageUrl = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +42,27 @@ public class RequestedGameInfo extends AppCompatActivity {
             gmPlatform.setText(gBundle.getString("Platform"));
             gmDeveloper.setText(gBundle.getString("Developer"));
             gmPrice.setText(gBundle.getString("Price"));
-            gmImage.setImageResource(gBundle.getInt("Image"));
+            //gmImage.setImageResource(gBundle.getInt("Image"));
+
+            key = gBundle.getString("keyValue");
+            imageUrl = gBundle.getString("Image");
 
             Glide.with(this).load(gBundle.getString("Image")).into(gmImage);
         }
 
+    }
+
+    public void btnDeleteRequest(View view) {
+        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("GameRequest");
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        StorageReference storageReference = storage.getReferenceFromUrl(imageUrl);
+        storageReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                reference.child(key).removeValue();
+                Toast.makeText(RequestedGameInfo.this, "Game Request Deleted", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), gameRequestListActivity.class));
+            }
+        });
     }
 }

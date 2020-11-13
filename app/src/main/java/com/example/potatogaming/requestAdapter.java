@@ -51,6 +51,9 @@ public class requestAdapter extends RecyclerView.Adapter<RequestViewHolder>{
                 intent.putExtra("Platform", myGameRequestList.get(holder.getAdapterPosition()).getGmPlatform());
                 intent.putExtra("Developer", myGameRequestList.get(holder.getAdapterPosition()).getGmDeveloper());
                 intent.putExtra("Price", myGameRequestList.get(holder.getAdapterPosition()).getGmPrice());
+
+                intent.putExtra("keyValue", myGameRequestList.get(holder.getAdapterPosition()).getKey());
+
                 rContext.startActivity(intent);
             }
         });
