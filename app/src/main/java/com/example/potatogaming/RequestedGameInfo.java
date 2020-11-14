@@ -65,4 +65,15 @@ public class RequestedGameInfo extends AppCompatActivity {
             }
         });
     }
+
+    public void btnUpdateRequest(View view) {
+        startActivity(new Intent(getApplicationContext(), updateActivity.class)
+                .putExtra("gName", gmTitle.getText().toString())
+                .putExtra("gDescription", gmDescription.getText().toString())
+                .putExtra("gPlatform", gmPlatform.getText().toString())
+                .putExtra("gDeveloper", gmDeveloper.getText().toString())
+                .putExtra("gPrice", gmPrice.getText().toString())
+                .putExtra("oldimageUrl", imageUrl)
+                .putExtra("key", key));
+    }
 }

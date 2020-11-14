@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".updateActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/gameImage"
+            android:src="@drawable/image_not_found"
+            android:contentDescription="@string/todo" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/game_title"
+            android:textSize="19sp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/gameTitle"
+            android:autofillHints=""/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/game_description"
+            android:textSize="19sp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/gameDescription"
+            android:importantForAutofill="no" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/platform"
+            android:textSize="19sp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/gamePlatform"
+            android:importantForAutofill="no" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/developer"
+            android:textSize="19sp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/gameDeveloper"
+            android:importantForAutofill="no" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/price"
+            android:textSize="19sp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/gamePrice"
+            android:importantForAutofill="no"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/select_image"
+            android:textSize="20sp"
+            android:onClick="btnSelectImage"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Update Request"
+            android:textSize="20sp"
+            android:onClick="btnUpdateRequest"
+            />
+    </LinearLayout>
+</ScrollView>

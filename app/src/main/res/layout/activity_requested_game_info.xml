@@ -70,17 +70,28 @@
             android:layout_height="fill_parent">
 
             <Button
+                android:id="@+id/btnDelete"
                 android:layout_width="140dp"
                 android:layout_height="60dp"
-                android:backgroundTint="#ff0000"
-                android:text="Delete"
-                android:textSize="22sp"
-                android:textColor="#ffffff"
-                android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
                 android:layout_margin="20dp"
+                android:backgroundTint="#ff0000"
                 android:onClick="btnDeleteRequest"
-                />
+                android:text="Delete"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
+            <Button
+                android:id="@+id/btnUpdate"
+                android:layout_width="140dp"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/colorAccent"
+                android:onClick="btnUpdateRequest"
+                android:text="Update"
+                android:textColor="#ffffff"
+                android:textSize="22sp" />
         </RelativeLayout>
     </LinearLayout>
 
