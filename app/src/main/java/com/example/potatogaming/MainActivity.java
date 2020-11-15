@@ -1,6 +1,8 @@
 package com.example.potatogaming;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,12 +10,35 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.potatogaming.adapter.TopSellersAdapter;
+import com.example.potatogaming.model.TopSellers;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
+
+    RecyclerView topSellersRecyclerView;
+    TopSellersAdapter topSellersAdapter;
+    List<TopSellers> topSellersList;
+
     private static final String TAG = MainActivity.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        topSellersRecyclerView = findViewById(R.id.topSellersRecycler);
+
+        topSellersList = new ArrayList<>();
+        topSellersList.add(new TopSellers(1, R.drawable.god_of_war));
+        topSellersList.add(new TopSellers(2, R.drawable.halo));
+        topSellersList.add(new TopSellers(3, R.drawable.spiderman));
+        topSellersList.add(new TopSellers(4, R.drawable.cyberpunk));
+
+        setTopSellersRecycler(topSellersList);
+
+
         Button showCustomerPage = findViewById(R.id.btn_CustomerPage);
         Log.d(TAG, "Creating Customer Page...");
         showCustomerPage.setOnClickListener(new View.OnClickListener() {
@@ -30,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, gameRequestListActivity.class));
             }
         });
+    }
+
+    private void setTopSellersRecycler(List<TopSellers> topSellersList) {
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        topSellersRecyclerView.setLayoutManager(layoutManager);
+
+        topSellersAdapter = new TopSellersAdapter(this, topSellersList);
+        topSellersRecyclerView.setAdapter(topSellersAdapter);
     }
 
     public void btnGameRequestPage(View view) {

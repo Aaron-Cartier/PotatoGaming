@@ -16,6 +16,8 @@
     <string name="request">Request</string>
     <string name="select_image">Select Image</string>
     <string name="game_description">Game Description</string>
-
-
+    <string name="potato_gaming">Potato Gaming</string>
+    <string name="search">Search</string>
+    <string name="game_request_list">Game Request List</string>
+    <string name="topSeller">Top Sellers</string>
 </resources>
