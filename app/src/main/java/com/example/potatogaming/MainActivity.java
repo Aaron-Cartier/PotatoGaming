@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         topSellersRecyclerView = findViewById(R.id.topSellersRecycler);
-        newReleasesRecyclerView = findViewById(R.id.newReleaseRecycler);
-
         topSellersList = new ArrayList<>();
         topSellersList.add(new TopSellers(1, R.drawable.god_of_war));
         topSellersList.add(new TopSellers(2, R.drawable.halo));
@@ -44,12 +42,13 @@ public class MainActivity extends AppCompatActivity {
         topSellersList.add(new TopSellers(4, R.drawable.cyberpunk));
         setTopSellersRecycler(topSellersList);
 
+        newReleasesRecyclerView = findViewById(R.id.newReleaseRecycler);
         newReleasesList = new ArrayList<>();
-        newReleasesList.add(new NewReleases("Ghost Of Tsushima",".......","PS4",".....","$79.99", R.drawable.ghost_of_tsushima));
-        newReleasesList.add(new NewReleases("The Last Of Us Part II",".......","PS4",".....","$79.99", R.drawable.last_of_us));
-        newReleasesList.add(new NewReleases("Uncharted: Lost Legacy",".......","PS4",".....","$79.99", R.drawable.uncharted_lost_legacy));
-        newReleasesList.add(new NewReleases("Spyro Reignited Trilogy",".......","PS4",".....","$79.99", R.drawable.spyro));
-        newReleasesList.add(new NewReleases("Ori And The Blind Forest",".......","XBOX",".....","$79.99", R.drawable.ori));
+        newReleasesList.add(new NewReleases("Ghost Of Tsushima","Ghost of Tsushima is an action-adventure game developed by Sucker Punch Productions and published by Sony Interactive Entertainment. Featuring an open world, it follows Jin Sakai, a samurai on a quest to protect Tsushima Island during the first Mongol invasion of Japan.","Platform: PS4","Developer: Sucker Punch","$79.99", R.drawable.ghost_of_tsushima));
+        newReleasesList.add(new NewReleases("The Last Of Us Part II","The Last of Us Part II is a 2020 action-adventure game developed by Naughty Dog and published by Sony Interactive Entertainment for the PlayStation 4.","Platform: PS4","Developer: Naughty Dog","$59.99", R.drawable.last_of_us));
+        newReleasesList.add(new NewReleases("Uncharted: The Lost Legacy","Uncharted: The Lost Legacy is a 2017 action-adventure game developed by Naughty Dog and published by Sony Interactive Entertainment for the PlayStation 4. It is a standalone expansion to Uncharted 4, and the first Uncharted game not to feature protagonist Nathan Drake. ","Platform: PS4","Developer: Naughty Dog","$19.99", R.drawable.uncharted_lost_legacy));
+        newReleasesList.add(new NewReleases("Spyro Reignited Trilogy","Spyro Reignited Trilogy is a platform video game developed by Toys for Bob and published by Activision. It is a collection of remasters of the first three games in the Spyro series: Spyro the Dragon, Ripto's Rage!, and Year of the Dragon.","Platform: PS4","Developer: Toys for Bob, Insomniac Games, Iron Galaxy ","$53.49", R.drawable.spyro));
+        newReleasesList.add(new NewReleases("Ori And The Blind Forest","Ori and the Blind Forest is a platform-adventure Metroidvania video game developed by Moon Studios and published by Microsoft Studios. The game was released for Xbox One and Microsoft Windows on March 11, 2015 and for Nintendo Switch on September 27, 2019.","Platform: XBOX","Developer: Moon Studios","$22.09", R.drawable.ori));
         setNewReleasesRecycler(newReleasesList);
 
 
