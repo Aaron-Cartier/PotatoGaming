@@ -20,4 +20,5 @@
     <string name="search">Search</string>
     <string name="game_request_list">Game Request List</string>
     <string name="topSeller">Top Sellers</string>
+    <string name="newRelease">New Releases</string>
 </resources>

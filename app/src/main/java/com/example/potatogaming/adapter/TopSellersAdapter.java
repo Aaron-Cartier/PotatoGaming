@@ -41,9 +41,7 @@ public class TopSellersAdapter extends RecyclerView.Adapter<TopSellersAdapter.To
     }
 
     @Override
-    public int getItemCount() {
-        return topSellersList.size();
-    }
+    public int getItemCount() { return topSellersList.size(); }
 
     public static class TopSellersViewHolder extends RecyclerView.ViewHolder{
 
