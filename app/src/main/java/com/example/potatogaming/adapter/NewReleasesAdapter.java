@@ -55,7 +55,6 @@ public class NewReleasesAdapter extends RecyclerView.Adapter<NewReleasesAdapter.
                 intent.putExtra("Developer", newReleasesList.get(holder.getAdapterPosition()).getDeveloper());
                 intent.putExtra("Price", newReleasesList.get(holder.getAdapterPosition()).getPrice());
                 context.startActivity(intent);
-
             }
         });
     }

@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
         topSellersRecyclerView = findViewById(R.id.topSellersRecycler);
         topSellersList = new ArrayList<>();
-        topSellersList.add(new TopSellers(1, R.drawable.god_of_war));
-        topSellersList.add(new TopSellers(2, R.drawable.halo));
-        topSellersList.add(new TopSellers(3, R.drawable.spiderman));
-        topSellersList.add(new TopSellers(4, R.drawable.cyberpunk));
+        topSellersList.add(new TopSellers("God Of War","God of War is an action-adventure game developed by Santa Monica Studio and published by Sony Interactive Entertainment. Released on April 20, 2018, for the PlayStation 4, it is the eighth installment in the God of War series, the eighth chronologically, and the sequel to 2010's God of War III.","Platform: PS4","Developer: SIE Santa Monica Studio","$19.99", R.drawable.god_of_war));
+        topSellersList.add(new TopSellers("Halo 5: Guardians", "Halo 5: Guardians is a first-person shooter video game developed by 343 Industries and published by Microsoft Studios for the Xbox One. The fifth mainline entry and tenth overall in the Halo series, it was released worldwide on October 27, 2015.","Platform: XBOX","Developer: 343 Industries","24.99", R.drawable.halo));
+        topSellersList.add(new TopSellers("Spider-Man", "Marvel's Spider-Man is a 2018 action-adventure game developed by Insomniac Games and published by Sony Interactive Entertainment. Based on the Marvel Comics superhero Spider-Man, it is inspired by the long-running comic book mythology and adaptations in other media.","Platform: PS4","Developer: Insomniac Games","$39.99", R.drawable.spiderman));
+        topSellersList.add(new TopSellers("Cyberpunk 2077", "Cyberpunk 2077 is an upcoming action role-playing video game developed and published by CD Projekt. It is scheduled to be released for Microsoft Windows, PlayStation 4, PlayStation 5, Stadia, Xbox One, and Xbox Series X/S on 10 December 2020.","Platform: PS4","Developer: CD Projekt, CD Projekt RED","$79.99", R.drawable.cyberpunk));
         setTopSellersRecycler(topSellersList);
 
         newReleasesRecyclerView = findViewById(R.id.newReleaseRecycler);
@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         newReleasesList.add(new NewReleases("Spyro Reignited Trilogy","Spyro Reignited Trilogy is a platform video game developed by Toys for Bob and published by Activision. It is a collection of remasters of the first three games in the Spyro series: Spyro the Dragon, Ripto's Rage!, and Year of the Dragon.","Platform: PS4","Developer: Toys for Bob, Insomniac Games, Iron Galaxy ","$53.49", R.drawable.spyro));
         newReleasesList.add(new NewReleases("Ori And The Blind Forest","Ori and the Blind Forest is a platform-adventure Metroidvania video game developed by Moon Studios and published by Microsoft Studios. The game was released for Xbox One and Microsoft Windows on March 11, 2015 and for Nintendo Switch on September 27, 2019.","Platform: XBOX","Developer: Moon Studios","$22.09", R.drawable.ori));
         setNewReleasesRecycler(newReleasesList);
-
 
         Button showCustomerPage = findViewById(R.id.btn_CustomerPage);
         Log.d(TAG, "Creating Customer Page...");

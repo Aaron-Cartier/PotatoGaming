@@ -21,4 +21,6 @@
     <string name="game_request_list">Game Request List</string>
     <string name="topSeller">Top Sellers</string>
     <string name="newRelease">New Releases</string>
+    <string name="txt_Label">Game Requests</string>
+    <string name="txtLabel">Customer List</string>
 </resources>
