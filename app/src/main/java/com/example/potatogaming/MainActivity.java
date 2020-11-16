@@ -1,5 +1,6 @@
 package com.example.potatogaming;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -7,6 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -51,22 +55,22 @@ public class MainActivity extends AppCompatActivity {
         newReleasesList.add(new NewReleases("Ori And The Blind Forest","Ori and the Blind Forest is a platform-adventure Metroidvania video game developed by Moon Studios and published by Microsoft Studios. The game was released for Xbox One and Microsoft Windows on March 11, 2015 and for Nintendo Switch on September 27, 2019.","Platform: XBOX","Developer: Moon Studios","$22.09", R.drawable.ori));
         setNewReleasesRecycler(newReleasesList);
 
-        Button showCustomerPage = findViewById(R.id.btn_CustomerPage);
-        Log.d(TAG, "Creating Customer Page...");
-        showCustomerPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, localDatabase.class));
-            }
-        });
-        Button showGameRequestListPage = findViewById(R.id.btnGameRequestListPage);
-        Log.d(TAG, "Opening Game Request Page...");
-        showGameRequestListPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, gameRequestListActivity.class));
-            }
-        });
+//        Button showCustomerPage = findViewById(R.id.btn_CustomerPage);
+//        Log.d(TAG, "Creating Customer Page...");
+//        showCustomerPage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, localDatabase.class));
+//            }
+//        });
+//        Button showGameRequestListPage = findViewById(R.id.btnGameRequestListPage);
+//        Log.d(TAG, "Opening Game Request Page...");
+//        showGameRequestListPage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, gameRequestListActivity.class));
+//            }
+//        });
     }
 
     private void setTopSellersRecycler(List<TopSellers> topSellersList) {
@@ -87,5 +91,38 @@ public class MainActivity extends AppCompatActivity {
 
     public void btnGameRequestPage(View view) {
         startActivity(new Intent(this, requestActivity.class));
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.item1:
+                return true;
+
+            case R.id.item2:
+                startActivity(new Intent(MainActivity.this, gameRequestListActivity.class));
+                return true;
+
+            case R.id.item3:
+                startActivity(new Intent(MainActivity.this, localDatabase.class));
+                return true;
+
+            case R.id.item4:
+                return true;
+
+            case R.id.subitem1: //ps4 activity
+                return true;
+
+            case R.id.subitem2: //xbox activity
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
