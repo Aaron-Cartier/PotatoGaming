@@ -23,4 +23,5 @@
     <string name="newRelease">New Releases</string>
     <string name="txt_Label">Game Requests</string>
     <string name="txtLabel">Customer List</string>
+    <string name="ps4_label">PS4 Games</string>
 </resources>

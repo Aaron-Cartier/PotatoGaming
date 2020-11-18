@@ -30,6 +30,8 @@ public class localDatabase extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_local_database);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         btn_Add = findViewById(R.id.btn_Add);
         btn_Viewall = findViewById(R.id.btn_Viewall);
         et_age = findViewById(R.id.et_age);

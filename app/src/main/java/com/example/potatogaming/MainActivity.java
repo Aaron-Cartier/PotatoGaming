@@ -118,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.subitem1: //ps4 activity
+                startActivity(new Intent(MainActivity.this, Ps4Activity.class));
                 return true;
 
             case R.id.subitem2: //xbox activity

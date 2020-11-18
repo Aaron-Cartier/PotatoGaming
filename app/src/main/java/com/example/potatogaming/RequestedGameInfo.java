@@ -27,6 +27,8 @@ public class RequestedGameInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_requested_game_info);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         gmTitle = (TextView)findViewById(R.id.ivTitle);
         gmDescription = (TextView)findViewById(R.id.ivDescription);
         gmPlatform = (TextView)findViewById(R.id.ivPlatform);

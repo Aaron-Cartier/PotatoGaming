@@ -33,6 +33,8 @@ public class gameRequestListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_request_list);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         rRecyclerView = (RecyclerView)findViewById(R.id.recyclerView);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(gameRequestListActivity.this, 1);
         rRecyclerView.setLayoutManager(gridLayoutManager);

@@ -3,6 +3,7 @@ package com.example.potatogaming;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,6 +16,9 @@ public class GameInfo extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_info);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         gmTitle = (TextView) findViewById(R.id.ivTitle);
         gmDescription = (TextView) findViewById(R.id.ivDescription);
         gmPlatform = (TextView) findViewById(R.id.ivPlatform);
@@ -31,10 +35,20 @@ public class GameInfo extends AppCompatActivity {
             gmDeveloper.setText(gBundle.getString("Developer"));
             gmPrice.setText(gBundle.getString("Price"));
             gmImage.setImageResource(gBundle.getInt("Image"));
-
         }
     }
 
     public void btnAddToCart(View view) {
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+
+        switch(item.getItemId()){
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

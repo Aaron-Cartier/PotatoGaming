@@ -5,23 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".gameRequestListActivity">
+    tools:context=".Ps4Activity">
 
     <TextView
-        android:id="@+id/txtLabel"
+        android:id="@+id/ps4txtLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
-        android:text="@string/txt_Label"
+        android:text="@string/ps4_label"
         android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="24sp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/ps4recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
         android:scrollbars="vertical" />
+
 </LinearLayout>

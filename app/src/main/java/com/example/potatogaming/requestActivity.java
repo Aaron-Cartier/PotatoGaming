@@ -38,6 +38,8 @@ public class requestActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_request);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         gameImage = (ImageView)findViewById(R.id.gameImage);
         gTitle = (EditText)findViewById(R.id.gameTitle);
         gDescription = (EditText)findViewById(R.id.gameDescription);
