@@ -122,6 +122,13 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.subitem2: //xbox activity
+                startActivity(new Intent(MainActivity.this, XboxActivity.class));
+                return true;
+
+            case R.id.item5: //store location
+                return true;
+
+            case R.id.item6: //Cart
                 return true;
         }
         return super.onOptionsItemSelected(item);

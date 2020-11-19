@@ -12,21 +12,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Ps4Activity"
+        <activity android:name=".XboxActivity"
             android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".Ps4Activity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".GameInfo" />
-        <activity android:name=".updateActivity"
-            android:parentActivityName=".gameRequestListActivity"/>
-        <activity android:name=".RequestedGameInfo"
-            android:parentActivityName=".gameRequestListActivity"/>
-        <activity android:name=".gameRequestListActivity"
-            android:parentActivityName=".MainActivity">
-        </activity>
-        <activity android:name=".requestActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".updateActivity"
+            android:parentActivityName=".gameRequestListActivity" />
+        <activity
+            android:name=".RequestedGameInfo"
+            android:parentActivityName=".gameRequestListActivity" />
+        <activity
+            android:name=".gameRequestListActivity"
+            android:parentActivityName=".MainActivity"></activity>
+        <activity
+            android:name=".requestActivity"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".localDatabase"
-            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".localDatabase"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".splashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
