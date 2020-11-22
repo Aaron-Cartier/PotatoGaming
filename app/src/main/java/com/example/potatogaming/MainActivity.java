@@ -58,23 +58,6 @@ public class MainActivity extends AppCompatActivity {
         newReleasesList.add(new NewReleases("Spyro Reignited Trilogy","Spyro Reignited Trilogy is a platform video game developed by Toys for Bob and published by Activision. It is a collection of remasters of the first three games in the Spyro series: Spyro the Dragon, Ripto's Rage!, and Year of the Dragon.","Platform: PS4","Developer: Toys for Bob, Insomniac Games, Iron Galaxy ","$53.49", R.drawable.spyro));
         newReleasesList.add(new NewReleases("Ori And The Blind Forest","Ori and the Blind Forest is a platform-adventure Metroidvania video game developed by Moon Studios and published by Microsoft Studios. The game was released for Xbox One and Microsoft Windows on March 11, 2015 and for Nintendo Switch on September 27, 2019.","Platform: XBOX","Developer: Moon Studios","$22.09", R.drawable.ori));
         setNewReleasesRecycler(newReleasesList);
-
-//        Button showCustomerPage = findViewById(R.id.btn_CustomerPage);
-//        Log.d(TAG, "Creating Customer Page...");
-//        showCustomerPage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, localDatabase.class));
-//            }
-//        });
-//        Button showGameRequestListPage = findViewById(R.id.btnGameRequestListPage);
-//        Log.d(TAG, "Opening Game Request Page...");
-//        showGameRequestListPage.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                startActivity(new Intent(MainActivity.this, gameRequestListActivity.class));
-//            }
-//        });
     }
 
     private void setTopSellersRecycler(List<TopSellers> topSellersList) {
@@ -130,6 +113,10 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.item5: //store location
+                return true;
+
+            case R.id.item6:
+                startActivity(new Intent(MainActivity.this, CartListActivity.class));
                 return true;
         }
         return super.onOptionsItemSelected(item);

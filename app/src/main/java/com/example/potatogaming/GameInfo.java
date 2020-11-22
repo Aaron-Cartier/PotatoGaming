@@ -57,16 +57,11 @@ public class GameInfo extends AppCompatActivity {
             gmPrice.setText(gBundle.getString("Price"));
             gmImage.setImageResource(gBundle.getInt("Image"));
         }
-
     }
 
     public void btnAddToCart(View view) {
        toCart = new Cart(
-                gmTitle.getText().toString(),
-                gmDescription.getText().toString(),
-                gmPlatform.getText().toString(),
-                gmDeveloper.getText().toString(),
-                gmPrice.getText().toString()
+                gmTitle.getText().toString(), gmPrice.getText().toString()
         );
 
         String myCurrentDateTime = DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime());

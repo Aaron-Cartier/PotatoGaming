@@ -8,7 +8,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ProgressBar;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,11 +18,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class gameRequestListActivity extends AppCompatActivity {
-
-    RecyclerView rRecyclerView;
-    List<gameRequest> myGameRequestList;
-    gameRequest rGameRequest;
+public class CartListActivity extends AppCompatActivity {
+    RecyclerView recyclerView;
+    List<Cart> myCartList;
 
     private DatabaseReference databaseReference;
     private ValueEventListener valueEventListener;
@@ -32,43 +29,47 @@ public class gameRequestListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_request_list);
+        setContentView(R.layout.activity_cart_list);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        rRecyclerView = (RecyclerView)findViewById(R.id.recyclerView);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(gameRequestListActivity.this, 1);
-        rRecyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(CartListActivity.this, 1);
+        recyclerView.setLayoutManager(gridLayoutManager);
 
         progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Loading requests...");
+        progressDialog.setMessage("Loading cart...");
 
-        myGameRequestList = new ArrayList<>();
+        myCartList = new ArrayList<>();
 
-        final requestAdapter rAdapter = new requestAdapter(gameRequestListActivity.this, myGameRequestList);
-        rRecyclerView.setAdapter(rAdapter);
+        final CartAdapter cAdapter = new CartAdapter(CartListActivity.this, myCartList);
+        recyclerView.setAdapter(cAdapter);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("GameRequest");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Cart");
 
         valueEventListener = databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                myGameRequestList.clear();
+                myCartList.clear();
 
                 for(DataSnapshot itemSnapshot: dataSnapshot.getChildren()) {
-                    gameRequest gmRequest = itemSnapshot.getValue(gameRequest.class);
-                    gmRequest.setKey(itemSnapshot.getKey());
-                    myGameRequestList.add(gmRequest);
+                    Cart cart = itemSnapshot.getValue(Cart.class);
+                    cart.setKey(itemSnapshot.getKey());
+                    myCartList.add(cart);
                 }
-                rAdapter.notifyDataSetChanged();
+                cAdapter.notifyDataSetChanged();
                 progressDialog.dismiss();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 progressDialog.dismiss();
-
             }
         });
+    }
+
+    public void btnClearCart(View view) {
+        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Cart");
+        reference.removeValue();
     }
 }

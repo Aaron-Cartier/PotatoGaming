@@ -51,7 +51,6 @@ public class RequestedGameInfo extends AppCompatActivity {
 
             Glide.with(this).load(gBundle.getString("Image")).into(gmImage);
         }
-
     }
 
     public void btnDeleteRequest(View view) {
