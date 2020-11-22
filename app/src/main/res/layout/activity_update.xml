@@ -64,17 +64,20 @@
             android:importantForAutofill="no"/>
         <Button
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:text="@string/select_image"
             android:textSize="20sp"
             android:onClick="btnSelectImage"
+            android:background="@drawable/round_button"
             />
         <Button
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="5dp"
             android:text="Update Request"
             android:textSize="20sp"
             android:onClick="btnUpdateRequest"
+            android:background="@drawable/round_button"
             />
     </LinearLayout>
 </ScrollView>

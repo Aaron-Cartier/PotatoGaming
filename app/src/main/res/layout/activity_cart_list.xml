@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -38,9 +38,11 @@
             android:layout_marginLeft="50dp"
             android:layout_marginTop="500dp"
             android:layout_marginRight="50dp"
+            android:background="@drawable/round_button"
+            android:backgroundTint="#ff0000"
+            android:onClick="btnClearCart"
             android:text="@string/clear_cart"
-            android:textColor="@color/design_default_color_error"
-            android:textSize="24sp"
-            android:onClick="btnClearCart"/>
+            android:textColor="@color/cardview_light_background"
+            android:textSize="24sp" />
     </RelativeLayout>
-</ScrollView>
+</LinearLayout>

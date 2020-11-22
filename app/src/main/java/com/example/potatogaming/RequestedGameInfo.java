@@ -2,6 +2,8 @@ package com.example.potatogaming;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -55,16 +57,25 @@ public class RequestedGameInfo extends AppCompatActivity {
 
     public void btnDeleteRequest(View view) {
         final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("GameRequest");
-        FirebaseStorage storage = FirebaseStorage.getInstance();
-        StorageReference storageReference = storage.getReferenceFromUrl(imageUrl);
-        storageReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Are you sure you want to delete this game request?");
+        alert.setNegativeButton("Cancel", null);
+        alert.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
             @Override
-            public void onSuccess(Void aVoid) {
-                reference.child(key).removeValue();
-                Toast.makeText(RequestedGameInfo.this, "Game Request Deleted", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), gameRequestListActivity.class));
+            public void onClick(DialogInterface dialog, int which) {
+                FirebaseStorage storage = FirebaseStorage.getInstance();
+                StorageReference storageReference = storage.getReferenceFromUrl(imageUrl);
+                storageReference.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        reference.child(key).removeValue();
+                        Toast.makeText(RequestedGameInfo.this, "Game Request Deleted", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), gameRequestListActivity.class));
+                    }
+                });
             }
         });
+        alert.show();
     }
 
     public void btnUpdateRequest(View view) {

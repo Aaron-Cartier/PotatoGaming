@@ -27,4 +27,5 @@
     <string name="xbox_label">XBOX Games</string>
     <string name="cart_label">Checkout Cart</string>
     <string name="clear_cart">Clear Cart</string>
+    <string name="remove">Remove</string>
 </resources>
