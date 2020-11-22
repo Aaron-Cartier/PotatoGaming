@@ -116,12 +116,11 @@
                 android:id="@+id/btnToCart"
                 android:layout_width="200dp"
                 android:layout_height="60dp"
-
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="60dp"
                 android:backgroundTint="@color/colorAccent"
-                android:onClick="btnAddToCart"
                 android:text="Add To Cart"
+                android:onClick="btnAddToCart"
                 android:textColor="#ffffff"
                 android:textSize="22sp" />
 

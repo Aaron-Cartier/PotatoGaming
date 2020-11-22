@@ -27,11 +27,7 @@
         </menu>
     </item>
     <item android:id="@+id/item5"
-        android:title="Store Location"
-        app:showAsAction="never"
-        />
-    <item android:id="@+id/item6"
-        android:title="Cart"
+        android:title="Current Location"
         app:showAsAction="never"
         />
 </menu>

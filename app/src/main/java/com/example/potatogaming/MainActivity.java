@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.mipmap.ic_launcher);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
         topSellersRecyclerView = findViewById(R.id.topSellersRecycler);
         topSellersList = new ArrayList<>();
         topSellersList.add(new TopSellers("God Of War","God of War is an action-adventure game developed by Santa Monica Studio and published by Sony Interactive Entertainment. Released on April 20, 2018, for the PlayStation 4, it is the eighth installment in the God of War series, the eighth chronologically, and the sequel to 2010's God of War III.","Platform: PS4","Developer: SIE Santa Monica Studio","$19.99", R.drawable.god_of_war));
@@ -126,9 +130,6 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.item5: //store location
-                return true;
-
-            case R.id.item6: //Cart
                 return true;
         }
         return super.onOptionsItemSelected(item);

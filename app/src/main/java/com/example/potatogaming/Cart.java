@@ -1,23 +1,21 @@
 package com.example.potatogaming;
 
-public class gameRequest {
+public class Cart {
     private String gmTitle;
     private String gmDescription;
     private String gmPlatform;
     private String gmDeveloper;
     private String gmPrice;
-    private String gmImage;
-    private String key;
 
-    public gameRequest(){}
+    public Cart() {
+    }
 
-    public gameRequest(String gmTitle, String gmDescription, String gmPlatform, String gmDeveloper, String gmPrice, String gmImage) {
+    public Cart(String gmTitle, String gmDescription, String gmPlatform, String gmDeveloper, String gmPrice) {
         this.gmTitle = gmTitle;
         this.gmDescription = gmDescription;
         this.gmPlatform = gmPlatform;
         this.gmDeveloper = gmDeveloper;
         this.gmPrice = gmPrice;
-        this.gmImage = gmImage;
     }
 
     public String getGmTitle() {
@@ -40,18 +38,6 @@ public class gameRequest {
         return gmPrice;
     }
 
-    public String getGmImage() {
-        return gmImage;
-    }
-
-    public String getKey() {
-        return key;
-    }
-
-    public void setKey(String key) {
-        this.key = key;
-    }
-
     public void setGmTitle(String gmTitle) {
         this.gmTitle = gmTitle;
     }
@@ -70,9 +56,5 @@ public class gameRequest {
 
     public void setGmPrice(String gmPrice) {
         this.gmPrice = gmPrice;
-    }
-
-    public void setGmImage(String gmImage) {
-        this.gmImage = gmImage;
     }
 }
