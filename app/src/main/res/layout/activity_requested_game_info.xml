@@ -73,7 +73,7 @@
                 android:id="@+id/btnDelete"
                 android:layout_width="140dp"
                 android:layout_height="50dp"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
@@ -82,7 +82,7 @@
                 android:background="@drawable/round_button"
                 android:backgroundTint="#ff0000"
                 android:onClick="btnDeleteRequest"
-                android:text="Delete"
+                android:text="@string/delete"
                 android:textColor="#ffffff"
                 android:textSize="22sp" />
 
@@ -97,7 +97,7 @@
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/round_button"
                 android:onClick="btnUpdateRequest"
-                android:text="Update"
+                android:text="@string/update"
                 android:textColor="#ffffff"
                 android:textSize="22sp" />
         </RelativeLayout>

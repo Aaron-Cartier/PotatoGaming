@@ -15,7 +15,7 @@
             android:id="@+id/ivImage"
             android:layout_width="300dp"
             android:layout_height="370dp"
-            android:layout_marginLeft="55dp"
+            android:layout_marginStart="55dp"
             android:layout_marginTop="10dp"
             android:contentDescription="@string/todo"
             android:scaleType="centerCrop"
@@ -116,12 +116,12 @@
                 android:id="@+id/btnToCart"
                 android:layout_width="200dp"
                 android:layout_height="50dp"
-                android:layout_marginLeft="100dp"
+                android:layout_marginStart="100dp"
                 android:layout_marginTop="60dp"
                 android:background="@drawable/round_button"
                 android:backgroundTint="@color/colorAccent"
                 android:onClick="btnAddToCart"
-                android:text="Add To Cart"
+                android:text="@string/add_to_cart"
                 android:textColor="#ffffff"
                 android:textSize="22sp" />
 

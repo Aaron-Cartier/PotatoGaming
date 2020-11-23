@@ -28,7 +28,8 @@
             android:textSize="19sp"
             android:layout_marginTop="20dp"
             android:id="@+id/gameTitle"
-            android:autofillHints=""/>
+            android:autofillHints=""
+            />
 
         <EditText
             android:layout_width="match_parent"
@@ -61,7 +62,8 @@
             android:textSize="19sp"
             android:layout_marginTop="10dp"
             android:id="@+id/gamePrice"
-            android:importantForAutofill="no"/>
+            android:importantForAutofill="no"
+            />
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -74,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="5dp"
-            android:text="Update Request"
+            android:text="@string/update_request"
             android:textSize="20sp"
             android:onClick="btnUpdateRequest"
             android:background="@drawable/round_button"
