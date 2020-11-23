@@ -28,4 +28,5 @@
     <string name="cart_label">Checkout Cart</string>
     <string name="clear_cart">Clear Cart</string>
     <string name="remove">Remove</string>
+    <string name="title_activity_current_location">Map</string>
 </resources>

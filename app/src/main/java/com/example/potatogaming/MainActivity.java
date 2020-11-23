@@ -113,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.item5: //store location
+                startActivity(new Intent(MainActivity.this, CurrentLocation.class));
                 return true;
 
             case R.id.item6:
