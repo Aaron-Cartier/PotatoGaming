@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     TopSellersAdapter topSellersAdapter;
     List<TopSellers> topSellersList;
-
+    
     NewReleasesAdapter newReleasesAdapter;
     List<NewReleases> newReleasesList;
 

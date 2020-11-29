@@ -23,7 +23,7 @@ import static org.junit.Assert.*;
  *
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
-public class ExampleUnitTest {
+public class UnitTest {
     List<TopSellers> topSellersList = new ArrayList<>();
     List<NewReleases> newReleasesList = new ArrayList<>();
 
@@ -35,7 +35,6 @@ public class ExampleUnitTest {
 
     @Test
     public void getNewReleaseListSize() {
-        //assertEquals(4, 2 + 2);
         int res = 0;
         Assert.assertEquals(res, newReleasesList.size());
     }
@@ -45,5 +44,19 @@ public class ExampleUnitTest {
         TopSellers game = new TopSellers("Testing","This is a tester object","PC","Myself","Priceless", R.drawable.app_logo);
         String title = "Testing";
         Assert.assertEquals(title, game.getTitle());
+    }
+
+    @Test
+    public void getGameDescription() {
+        NewReleases game2 = new NewReleases("Testing","This is a tester object","PC","Myself","Priceless", R.drawable.app_logo);
+        String description = "This is a tester object";
+        Assert.assertEquals(description, game2.getDescription());
+    }
+
+    @Test
+    public void getGamePrice() {
+        gameRequest game3 = new gameRequest("Testing","This is a tester object","PC","Myself","Priceless", "");
+        String price = "Priceless";
+        Assert.assertEquals(price, game3.getGmPrice());
     }
 }
